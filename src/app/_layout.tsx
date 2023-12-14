@@ -27,11 +27,7 @@ export default function RootLayout() {
     return null;
   }
   return (
-    <Stack
-      screenOptions={{
-        statusBarStyle: 'light',
-      }}
-    >
+    <Stack screenOptions={{}}>
       <Stack.Screen
         name='index'
         options={{
