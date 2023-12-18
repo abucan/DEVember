@@ -16,10 +16,8 @@ import {
 } from 'react-native-gesture-handler';
 
 import Animated, {
-  BounceOutRight,
   FadeIn,
   FadeOut,
-  SlideInLeft,
   SlideInRight,
   SlideOutLeft,
 } from 'react-native-reanimated';

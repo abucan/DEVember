@@ -1,6 +1,6 @@
 export const days = [
   { day: 1, screen: 'onboarding' },
-  { day: 2, screen: '' },
+  { day: 2, screen: 'markdown' },
   { day: 3, screen: '' },
   { day: 4, screen: '' },
   { day: 5, screen: '' },

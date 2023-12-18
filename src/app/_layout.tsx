@@ -11,6 +11,7 @@ import {
   AmaticSC_400Regular,
   AmaticSC_700Bold,
 } from '@expo-google-fonts/amatic-sc';
+import { CourierPrime_400Regular } from '@expo-google-fonts/courier-prime';
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -25,6 +26,7 @@ export default function RootLayout() {
     InterBlack: Inter_900Black,
     Amatic: AmaticSC_400Regular,
     AmaticBold: AmaticSC_700Bold,
+    Courier: CourierPrime_400Regular,
   });
 
   useEffect(() => {
