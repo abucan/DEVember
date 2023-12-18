@@ -55,7 +55,7 @@ Markdown is not just for formatting; it's for having fun while expressing yourse
 > Enjoy crafting your own fun markdown documents! 🎨🎉
 `;
 
-const MarkdownPreview = () => {
+const MarkdownEditor = () => {
   const [content, setContent] = useState(template);
   const [tab, setTab] = useState('preview');
 
@@ -129,4 +129,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MarkdownPreview;
+export default MarkdownEditor;
