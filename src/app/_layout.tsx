@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   useFonts,
   Inter_900Black,
@@ -14,11 +14,17 @@ import {
 import { CourierPrime_400Regular } from '@expo-google-fonts/courier-prime';
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import AnimatedSplashScreen from '../components/core/AnimatedSplashScreen';
+import Animated, { FadeIn } from 'react-native-reanimated';
 
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 // This is loaded first, so we can use it to load fonts
 export default function RootLayout() {
+  const [appReady, setAppReady] = useState(false);
+  const [splashAnimationFinished, setSplashAnimationFinished] =
+    useState(false);
+
   const [fontsLoaded, error] = useFonts({
     Inter: Inter_400Regular,
     InterMedium: Inter_600SemiBold,
@@ -31,23 +37,35 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (fontsLoaded || error) {
-      SplashScreen.hideAsync();
+      // SplashScreen.hideAsync();
+      setAppReady(true);
     }
   }, [fontsLoaded, error]);
 
-  if (!fontsLoaded && !error) {
-    return null;
+  const showAnimatedSplash = !appReady || !splashAnimationFinished;
+  if (showAnimatedSplash) {
+    return (
+      <AnimatedSplashScreen
+        onAnimationFinish={(isCancelled) => {
+          if (!isCancelled) {
+            setSplashAnimationFinished(true);
+          }
+        }}
+      />
+    );
   }
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Stack screenOptions={{}}>
-        <Stack.Screen
-          name='index'
-          options={{
-            title: 'DEVember of React Native',
-          }}
-        />
-      </Stack>
+      <Animated.View entering={FadeIn} style={{ flex: 1 }}>
+        <Stack screenOptions={{}}>
+          <Stack.Screen
+            name='index'
+            options={{
+              title: 'DEVember of React Native',
+            }}
+          />
+        </Stack>
+      </Animated.View>
     </GestureHandlerRootView>
   );
 }
