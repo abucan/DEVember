@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import { View, StyleSheet, Text } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { PROVIDER_DEFAULT } from 'react-native-maps';
 import apartments from '../../../../assets/data/airbnb/apartments.json';
 import CustomMarker from '../../../components/core/CustomMarker';
 import ApartmentListItem from '../../../components/core/ApartmentListItem';
@@ -21,7 +21,11 @@ const AirbnbMapScreen = () => {
   return (
     <View>
       <Stack.Screen options={{ headerShown: false }} />
-      <MapView provider={PROVIDER_GOOGLE} style={styles.map} region={mapRegion}>
+      <MapView
+        provider={PROVIDER_DEFAULT}
+        style={styles.map}
+        region={mapRegion}
+      >
         {apartments.map((apartment) => (
           <CustomMarker
             key={apartment.latitude}

@@ -6,7 +6,7 @@
       "title": "Cozy Apartment with Sea View",
       "stars": 4,
       "rating": 8.5,
-      "image": "https://example.com/image1.jpg"
+      "image": "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "longitude": 16.434056,
@@ -15,7 +15,7 @@
       "title": "Modern Downtown Loft",
       "stars": 5,
       "rating": 9.2,
-      "image": "https://example.com/image2.jpg"
+      "image": "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "longitude": 16.454763,
@@ -24,7 +24,7 @@
       "title": "Charming Old Town Studio",
       "stars": 3,
       "rating": 7.8,
-      "image": "https://example.com/image3.jpg"
+      "image": "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "longitude": 16.448529,
@@ -33,7 +33,7 @@
       "title": "Luxurious Beachfront Villa",
       "stars": 5,
       "rating": 9.5,
-      "image": "https://example.com/image4.jpg"
+      "image": "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "longitude": 16.440261,
@@ -42,7 +42,7 @@
       "title": "Spacious Family Apartment",
       "stars": 4,
       "rating": 8.9,
-      "image": "https://example.com/image5.jpg"
+      "image": "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ]
   

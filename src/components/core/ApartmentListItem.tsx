@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Image, ViewStyle } from 'react-native';
 import apartments from '../../../assets/data/airbnb/apartments.json';
+import Animated from 'react-native-reanimated';
 
 type ApartmentListItem = {
   apartment: (typeof apartments)[0];
@@ -11,7 +12,7 @@ const ApartmentListItem = ({
   containerStyle,
 }: ApartmentListItem) => {
   return (
-    <View style={[styles.card, containerStyle]}>
+    <Animated.View style={[styles.card, containerStyle]}>
       <Image source={{ uri: apartment.image }} style={styles.image} />
       <View style={styles.rightContainer}>
         <Text style={styles.title}>{apartment.title}</Text>
@@ -25,7 +26,7 @@ const ApartmentListItem = ({
           </Text>
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 
