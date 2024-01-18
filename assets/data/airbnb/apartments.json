@@ -1,0 +1,48 @@
+[
+    {
+      "longitude": 16.442417,
+      "latitude": 43.508133,
+      "price": 80,
+      "title": "Cozy Apartment with Sea View",
+      "stars": 4,
+      "rating": 8.5,
+      "image": "https://example.com/image1.jpg"
+    },
+    {
+      "longitude": 16.434056,
+      "latitude": 43.511814,
+      "price": 120,
+      "title": "Modern Downtown Loft",
+      "stars": 5,
+      "rating": 9.2,
+      "image": "https://example.com/image2.jpg"
+    },
+    {
+      "longitude": 16.454763,
+      "latitude": 43.502368,
+      "price": 60,
+      "title": "Charming Old Town Studio",
+      "stars": 3,
+      "rating": 7.8,
+      "image": "https://example.com/image3.jpg"
+    },
+    {
+      "longitude": 16.448529,
+      "latitude": 43.515141,
+      "price": 150,
+      "title": "Luxurious Beachfront Villa",
+      "stars": 5,
+      "rating": 9.5,
+      "image": "https://example.com/image4.jpg"
+    },
+    {
+      "longitude": 16.440261,
+      "latitude": 43.503949,
+      "price": 100,
+      "title": "Spacious Family Apartment",
+      "stars": 4,
+      "rating": 8.9,
+      "image": "https://example.com/image5.jpg"
+    }
+  ]
+  
