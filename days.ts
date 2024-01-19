@@ -3,7 +3,7 @@ export const days = [
   { day: 2, screen: 'markdown' },
   { day: 3, screen: 'splash-screen' },
   { day: 4, screen: 'airbnb-map' },
-  { day: 5, screen: '' },
+  { day: 5, screen: 'tinder-swipe' },
   { day: 6, screen: '' },
   { day: 7, screen: '' },
   { day: 8, screen: '' },
