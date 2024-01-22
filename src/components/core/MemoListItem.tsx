@@ -3,6 +3,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AVPlaybackStatus, Audio } from 'expo-av';
 import { Sound } from 'expo-av/build/Audio';
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 
 const MemoListItem = ({ uri }: { uri: string }) => {
   const [sound, setSound] = useState<Sound>();
@@ -12,8 +16,8 @@ const MemoListItem = ({ uri }: { uri: string }) => {
     console.log('Loading Sound');
     const { sound } = await Audio.Sound.createAsync(
       { uri },
-      undefined,
-      onPlaybackStatusUpdate,
+      { progressUpdateIntervalMillis: 100 },
+      onPlaybackStatusUpdate
     );
     setSound(sound);
   }
@@ -28,7 +32,7 @@ const MemoListItem = ({ uri }: { uri: string }) => {
         await sound?.setPositionAsync(0);
       }
     },
-    [sound],
+    [sound]
   );
 
   async function playSound() {
@@ -59,6 +63,10 @@ const MemoListItem = ({ uri }: { uri: string }) => {
 
   const progress = position / duration!;
 
+  const animatedIndicatorStyle = useAnimatedStyle(() => ({
+    left: withTiming(`${progress * 100}%`, { duration: 100 }),
+  }));
+
   const formatMillis = (millis: number) => {
     const minutes = Math.floor(millis / (1000 * 60));
     const seconds = Math.floor((millis % (1000 * 60)) / 1000);
@@ -77,11 +85,8 @@ const MemoListItem = ({ uri }: { uri: string }) => {
 
       <View style={styles.playbackContainer}>
         <View style={styles.playbackBackground} />
-        <View
-          style={[
-            styles.playbackIndicator,
-            { left: `${progress * 100}%` },
-          ]}
+        <Animated.View
+          style={[styles.playbackIndicator, animatedIndicatorStyle]}
         />
         <Text
           style={{
@@ -91,8 +96,7 @@ const MemoListItem = ({ uri }: { uri: string }) => {
             color: 'gray',
           }}
         >
-          {formatMillis(position || 0)} /{' '}
-          {formatMillis(duration || 0)}
+          {formatMillis(position || 0)} / {formatMillis(duration || 0)}
         </Text>
       </View>
     </View>
