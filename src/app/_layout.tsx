@@ -19,14 +19,29 @@ import Animated, { FadeIn } from 'react-native-reanimated';
 
 import { Amplify } from 'aws-amplify';
 import amplifyconfig from '../../src/amplifyconfiguration.json';
+import {
+  Authenticator,
+  ThemeProvider,
+} from '@aws-amplify/ui-react-native';
 Amplify.configure(amplifyconfig);
+
+const theme = {
+  tokens: {
+    colors: {
+      font: {
+        primary: 'black',
+      },
+    },
+  },
+};
 
 // SplashScreen.preventAutoHideAsync();
 
 // This is loaded first, so we can use it to load fonts
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
-  const [splashAnimationFinished, setSplashAnimationFinished] = useState(false);
+  const [splashAnimationFinished, setSplashAnimationFinished] =
+    useState(false);
 
   const [fontsLoaded, error] = useFonts({
     Inter: Inter_400Regular,
@@ -58,17 +73,21 @@ export default function RootLayout() {
     );
   }
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <Animated.View entering={FadeIn} style={{ flex: 1 }}>
-        <Stack screenOptions={{}}>
-          <Stack.Screen
-            name='index'
-            options={{
-              title: 'DEVember of React Native',
-            }}
-          />
-        </Stack>
-      </Animated.View>
-    </GestureHandlerRootView>
+    <Authenticator.Provider>
+      <ThemeProvider theme={theme}>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Animated.View entering={FadeIn} style={{ flex: 1 }}>
+            <Stack screenOptions={{}}>
+              <Stack.Screen
+                name='index'
+                options={{
+                  title: 'DEVember of React Native',
+                }}
+              />
+            </Stack>
+          </Animated.View>
+        </GestureHandlerRootView>
+      </ThemeProvider>
+    </Authenticator.Provider>
   );
 }

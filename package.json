@@ -4,12 +4,13 @@
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
     "@aws-amplify/react-native": "^1.0.13",
+    "@aws-amplify/ui-react-native": "^2.1.0",
     "@devvie/bottom-sheet": "^0.2.1",
     "@expo-google-fonts/amatic-sc": "^0.2.3",
     "@expo-google-fonts/courier-prime": "^0.2.3",

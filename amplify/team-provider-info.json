@@ -10,6 +10,29 @@
       "StackName": "amplify-devember-dev-92923",
       "StackId": "arn:aws:cloudformation:us-east-1:637423588595:stack/amplify-devember-dev-92923/af43ed00-ba92-11ee-b2c5-0e10e785e9b5",
       "AmplifyAppId": "d17g3xjr1a2emr"
+    },
+    "categories": {
+      "auth": {
+        "devember4774dddd": {}
+      }
+    }
+  },
+  "develop": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-devember-develop-181122-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423588595:role/amplify-devember-develop-181122-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423588595:role/amplify-devember-develop-181122-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-devember-develop-181122-deployment",
+      "UnauthRoleName": "amplify-devember-develop-181122-unauthRole",
+      "StackName": "amplify-devember-develop-181122",
+      "StackId": "arn:aws:cloudformation:us-east-1:637423588595:stack/amplify-devember-develop-181122/9adaf8b0-badb-11ee-8433-0e89a37f8f4f",
+      "AmplifyAppId": "d17g3xjr1a2emr"
+    },
+    "categories": {
+      "auth": {
+        "devember4774dddd": {}
+      }
     }
   }
 }
