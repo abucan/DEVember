@@ -17,13 +17,16 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import AnimatedSplashScreen from '../components/core/AnimatedSplashScreen';
 import Animated, { FadeIn } from 'react-native-reanimated';
 
+import { Amplify } from 'aws-amplify';
+import amplifyconfig from '../../src/amplifyconfiguration.json';
+Amplify.configure(amplifyconfig);
+
 // SplashScreen.preventAutoHideAsync();
 
 // This is loaded first, so we can use it to load fonts
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
-  const [splashAnimationFinished, setSplashAnimationFinished] =
-    useState(false);
+  const [splashAnimationFinished, setSplashAnimationFinished] = useState(false);
 
   const [fontsLoaded, error] = useFonts({
     Inter: Inter_400Regular,

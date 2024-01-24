@@ -6,7 +6,7 @@ export const days = [
   { day: 5, screen: 'tinder-swipe' },
   { day: 6, screen: 'voice-memos' },
   { day: 7, screen: 'weather-app' },
-  { day: 8, screen: '' },
+  { day: 8, screen: 'auth' },
   { day: 9, screen: '' },
   { day: 10, screen: '' },
   { day: 11, screen: '' },
